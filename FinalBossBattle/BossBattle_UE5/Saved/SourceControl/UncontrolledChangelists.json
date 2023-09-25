@@ -8,8 +8,16 @@
 				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
 				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/BS_MF_Unarmed_WalkRun.uasset",
 				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/MF_Jog_Fwd.uasset",
-				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/MF_Run_Fwd.uasset",
-				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ShooterAnimations/Jog_Fwd_Rifle.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ShooterAnimations/Idle_Rifle_Ironsights.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ShooterAnimations/Idle_Rifle_Hip.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ShooterAnimations/Fire_Rifle_Ironsights.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ShooterAnimations/ShooterBlendSpace1D.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ShooterAnimations/ABP_Shooter.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ABP_Shooter.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/MF_Run_Fwd.uasset"
 			]
 		}
 	]
