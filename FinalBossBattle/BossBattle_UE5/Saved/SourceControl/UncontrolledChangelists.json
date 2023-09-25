@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/BS_MF_Unarmed_WalkRun.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/MF_Jog_Fwd.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/Characters/Mannequins/Animations/Quinn/MF_Run_Fwd.uasset",
+				"C:/Users/s21119698/Desktop/Github/milestones-ai-23-24-Dylan-Odjidja/FinalBossBattle/BossBattle_UE5/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
+			]
+		}
+	]
+}
