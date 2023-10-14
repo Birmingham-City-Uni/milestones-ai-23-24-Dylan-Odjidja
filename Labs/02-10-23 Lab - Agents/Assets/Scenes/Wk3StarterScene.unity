@@ -810,7 +810,9 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  sensorType: 2
+  sensorType: 1
   raycastLength: 5
   boxExtents: {x: 5, y: 1}
   sphereRadius: 1
+  rayRes: 5
+  searchArc: 90

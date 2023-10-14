@@ -27,9 +27,14 @@ public class sensors : MonoBehaviour
     [Header("Sphere Settings")]
     public float sphereRadius = 1.0f;
 
+    [Header("RayBundle Settings")]
+    [Range(1, 20)]
+    public int rayRes = 5;
+    [Range(0, 360)]
+    public int searchArc = 90;
+
     Transform cachedTransform;
 
-    // Start is called before the first frame update
     void Start()
     {
         cachedTransform = GetComponent<Transform>();
@@ -37,6 +42,7 @@ public class sensors : MonoBehaviour
 
     public bool Hit { get; private set; }
     public RaycastHit info = new RaycastHit();
+    public RaycastHit[] hits;
 
     public bool Scan()
     {
@@ -70,6 +76,36 @@ public class sensors : MonoBehaviour
                     return true;
                 }
 
+                break;
+            case Type.RayBundle:
+                hits = new RaycastHit[rayRes + 1];
+                int hit_count = 0;
+                float startSweep = -searchArc * 0.5f;
+                float finishSweep = searchArc * 0.5f;
+                float sweepGap = searchArc / rayRes;
+                for (int i = 0; i < rayRes + 1; i++)
+                {
+                    dir = (Quaternion.Euler(0, startSweep + i * sweepGap, 0) * this.transform.forward).normalized * raycastLength;
+                    // Debug.DrawRay(this.transform.position + dir * Mathf.Epsilon, dir, Color.blue, 2.0f);
+                    if (Physics.Linecast(cachedTransform.position + dir * Mathf.Epsilon, cachedTransform.position + dir, out hits[i], hitMask, QueryTriggerInteraction.Ignore))
+                    {
+                        hit_count++;
+                    }
+                }
+                if (hit_count > 0)
+                {
+                    System.Array.Sort(hits, (s1, s2) =>
+                    {
+                        if (s1.distance > s2.distance)
+                            return 1;
+                        if (s2.distance > s1.distance)
+                            return -1;
+                        return 0;
+                    });
+                    Hit = true;
+                    info = hits[hits.Length - 1];
+                    return true;
+                }
                 break;
         }
         return false;
@@ -124,6 +160,26 @@ public class sensors : MonoBehaviour
                 Gizmos.DrawLine(-Vector3.right * halfExtents, -Vector3.right * halfExtents + Vector3.forward * length);
                 Gizmos.DrawWireSphere(Vector3.zero + Vector3.forward * length, sphereRadius);
 
+                break;
+            case Type.RayBundle:
+                if (Hit)
+                    length = Vector3.Distance(this.transform.position, info.point);
+                float startSweep = -searchArc * 0.5f;
+                float finishSweep = searchArc * 0.5f;
+                float sweepGap = searchArc / rayRes;
+                for (int i = 0; i < rayRes + 1; i++)
+                {
+                    Vector3 dir = (Quaternion.Euler(0, startSweep + i * sweepGap, 0) * Vector3.forward).normalized;
+                    Gizmos.DrawLine(Vector3.zero, dir * length);
+                }
+                Gizmos.color = Color.black;
+                Gizmos.DrawWireCube(Vector3.zero, new Vector3(0.02f, 0.02f, 0.02f));
+                Gizmos.color = Color.green;
+                if (Hit)
+                {
+                    Gizmos.matrix = Matrix4x4.identity;
+                    Gizmos.DrawWireCube(info.point, new Vector3(0.02f, 0.02f, 0.02f));
+                }
                 break;
         }
     }
