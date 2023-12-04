@@ -5,13 +5,12 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
-    AnimatorManager animatorManager;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
 
-    public float cameraInputX;
-    public float cameraInputY;
+    public float cameraInputVertical;
+    public float cameraInputHorizontal;
 
     private float moveAmount;
     public float verticalInput;
@@ -19,7 +18,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        animatorManager = GetComponent<AnimatorManager>();
+        
     }
 
     private void OnEnable()
@@ -50,10 +49,9 @@ public class InputManager : MonoBehaviour
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
 
-        cameraInputY = cameraInput.y;
-        cameraInputX = cameraInput.x;
+        cameraInputHorizontal = cameraInput.y;
+        cameraInputVertical = cameraInput.x;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        animatorManager.UpdateAnimatorValues(0, moveAmount);
     }
 }

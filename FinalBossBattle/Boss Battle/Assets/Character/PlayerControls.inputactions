@@ -17,7 +17,7 @@
                 {
                     "name": "Camera",
                     "type": "PassThrough",
-                    "id": "acc156d5-17fa-4b39-9dc3-0f8cab961a15",
+                    "id": "6981f5f7-601a-45d1-a76c-439affbc77dc",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -137,7 +137,7 @@
                 },
                 {
                     "name": "",
-                    "id": "0d45bf42-0829-4f83-8bd6-7bbaffff9fa9",
+                    "id": "cb901407-80c1-4f30-88ae-75a4dc16be2c",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
@@ -148,7 +148,7 @@
                 },
                 {
                     "name": "Right Stick",
-                    "id": "2a8ec1e7-57e0-41ac-8f2c-ada860ef76ea",
+                    "id": "188c0c68-a9ee-44dd-af64-800e6ebdf63b",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
@@ -159,7 +159,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "17ef3c7a-43bf-4af0-95d8-17e8fd85d1d0",
+                    "id": "35a42810-6be3-407f-8e6e-fe8d1df93cf9",
                     "path": "<Gamepad>/rightStick/up",
                     "interactions": "",
                     "processors": "",
@@ -170,7 +170,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "c08f9d29-da71-4816-85ee-26a13d44d192",
+                    "id": "98e7ecbe-ddf0-4fd7-9e7a-315ae91903c8",
                     "path": "<Gamepad>/rightStick/down",
                     "interactions": "",
                     "processors": "",
@@ -181,7 +181,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "b948fcb3-435f-4128-a6e5-5965f61f5366",
+                    "id": "7251fb71-2403-4ea4-8479-68608da94ed2",
                     "path": "<Gamepad>/rightStick/left",
                     "interactions": "",
                     "processors": "",
@@ -192,7 +192,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "304e2a98-c495-487f-bc19-0ecef312ce5e",
+                    "id": "8c15ebd9-99d3-4215-8a18-f4e329eed6b4",
                     "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "",
