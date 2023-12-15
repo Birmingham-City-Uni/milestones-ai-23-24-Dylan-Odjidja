@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Test Area
+  - CinemachineTarget
+  - Enemy
   layers:
   - Default
   - TransparentFX
