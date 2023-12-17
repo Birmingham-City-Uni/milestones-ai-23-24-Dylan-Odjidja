@@ -7,6 +7,8 @@ TagManager:
   - Test Area
   - CinemachineTarget
   - Enemy
+  - Sword
+  - WeaponHolder
   layers:
   - Default
   - TransparentFX
