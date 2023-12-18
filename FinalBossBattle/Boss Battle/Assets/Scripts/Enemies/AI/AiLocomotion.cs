@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AILocomotion : MonoBehaviour
+public class AiLocomotion : MonoBehaviour
 {
     public GameObject player;
     public float maxTime = 1.0f;

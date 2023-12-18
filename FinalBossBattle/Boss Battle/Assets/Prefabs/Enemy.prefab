@@ -153,6 +153,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   weaponHolder: {fileID: 0}
+  parent: {fileID: 0}
   weaponController: {fileID: 0}
   meshRenderer: {fileID: 0}
   blinkIntensity: 10
@@ -274,9 +275,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5581240221915156616}
   - component: {fileID: 8949583337881345882}
+  - component: {fileID: 5795452655367712911}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,6 +321,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5795452655367712911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243159802643976032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7180b2340a9e64d9e92f881353412f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: 2
+  navMeshAgent: {fileID: 8949583337881345882}
+  config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
+  healthBar: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &4269441475872136692
 GameObject:
   m_ObjectHideFlags: 0

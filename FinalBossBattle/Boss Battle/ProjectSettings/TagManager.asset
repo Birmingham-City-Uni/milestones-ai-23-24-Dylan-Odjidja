@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Sword
   - WeaponHolder
+  - Object
   layers:
   - Default
   - TransparentFX

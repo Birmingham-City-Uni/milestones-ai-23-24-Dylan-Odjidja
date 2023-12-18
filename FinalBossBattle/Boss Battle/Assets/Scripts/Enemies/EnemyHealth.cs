@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public GameObject weaponHolder;
+    public GameObject parent;
     public WeaponController weaponController;
     public MeshRenderer meshRenderer;
     EnemyHealthBar healthBar;
@@ -23,14 +24,15 @@ public class EnemyHealth : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         weaponController = weaponHolder.GetComponent<WeaponController>();
         healthBar = GetComponentInChildren<EnemyHealthBar>();
+        parent = GameObject.FindGameObjectWithTag("Object");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Sword" && weaponController.isAttacking)
         {
-            TakeDamage(10);
-            Debug.Log("-10");
+            TakeDamage(20);
+            Debug.Log("-20");
             //Instantiate(HitParticle.transform, 
             //    new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
         }
@@ -50,8 +52,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
-        healthBar.gameObject.SetActive(false);
+        Destroy(parent);
+        //healthBar.gameObject.SetActive(false);
     }
 
     private void Update()

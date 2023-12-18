@@ -6,7 +6,7 @@ public class WeaponController : MonoBehaviour
 {
     public GameObject sword;
     public bool CanAttack = true;
-    public float AttackCooldown = 0.75f;
+    public float AttackCooldown = 0.5f;
     public Animator animator;
     public bool isAttacking = false;
 
