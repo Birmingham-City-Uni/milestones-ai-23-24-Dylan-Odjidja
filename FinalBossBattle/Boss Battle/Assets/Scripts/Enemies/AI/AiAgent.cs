@@ -5,18 +5,23 @@ using UnityEngine.AI;
 
 public class AiAgent : MonoBehaviour
 {
-    public AiStateMachine stateMachine;
     public AiStateId initialState;
-    public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
-    public EnemyHealthBar healthBar;
-    public GameObject player;
+
+    [HideInInspector] public AiStateMachine stateMachine;
+    [HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public EnemyHealthBar healthBar;
+    [HideInInspector] public GameObject player;
+    [HideInInspector] public AiSensor sensors;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         healthBar = GetComponentInChildren<EnemyHealthBar>();
         player = GameObject.FindGameObjectWithTag("Player");
+        sensors = GetComponent<AiSensor>();
+
+
         stateMachine = new AiStateMachine(this);
         stateMachine.RegsiterState(new AiChasePlayerState());
         stateMachine.RegsiterState(new AiDeathState());

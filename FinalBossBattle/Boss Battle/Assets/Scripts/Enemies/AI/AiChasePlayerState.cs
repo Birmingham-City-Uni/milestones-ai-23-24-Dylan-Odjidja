@@ -25,23 +25,38 @@ public class AiChasePlayerState : AiState
         }
 
         timer -= Time.deltaTime;
-        if (!agent.navMeshAgent.hasPath)
-        {
-            agent.navMeshAgent.destination = agent.player.transform.position;
-        }
+
 
         if (timer < 0.0f)
         {
             Vector3 direction = (agent.player.transform.position - agent.navMeshAgent.destination);
             direction.y = 0;
-            if (direction.sqrMagnitude > agent.config.minDistance * agent.config.minDistance)
+            //if (direction.sqrMagnitude > agent.config.minDistance * agent.config.minDistance)
+            //{
+
+            //}
+            foreach (var obj in agent.sensors.objects)
             {
                 if (agent.navMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
                 {
-                    agent.navMeshAgent.destination = agent.player.transform.position;
+                    agent.navMeshAgent.destination = obj.transform.position;
                 }
             }
+
             timer = agent.config.maxTime;
+        }
+        else if (!agent.navMeshAgent.hasPath)
+        {
+            WorldBounds worldBounds = GameObject.FindObjectOfType<WorldBounds>();
+            Vector3 min = worldBounds.min.position;
+            Vector3 max = worldBounds.max.position;
+
+            Vector3 randomPosition = new Vector3(
+                Random.Range(min.x, max.x),
+                Random.Range(min.y, max.y),
+                Random.Range(min.z, max.z)
+                );
+            agent.navMeshAgent.destination = randomPosition;
         }
     }
 

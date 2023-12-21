@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         weaponHolder = GameObject.FindGameObjectWithTag("WeaponHolder");
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
         weaponController = weaponHolder.GetComponent<WeaponController>();
         healthBar = GetComponentInChildren<EnemyHealthBar>();
         parent = GameObject.FindGameObjectWithTag("Object");
