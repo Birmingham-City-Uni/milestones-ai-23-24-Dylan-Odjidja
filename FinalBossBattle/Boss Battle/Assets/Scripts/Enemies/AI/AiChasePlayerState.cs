@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class AiChasePlayerState : AiState
 {
-    float timer = 0.0f;
 
     public AiStateId GetId()
     {
@@ -24,39 +23,23 @@ public class AiChasePlayerState : AiState
             return;
         }
 
-        timer -= Time.deltaTime;
-
-
-        if (timer < 0.0f)
+        if (agent.sensors.objects.Count > 0) 
         {
-            Vector3 direction = (agent.player.transform.position - agent.navMeshAgent.destination);
-            direction.y = 0;
-            //if (direction.sqrMagnitude > agent.config.minDistance * agent.config.minDistance)
-            //{
-
-            //}
             foreach (var obj in agent.sensors.objects)
             {
                 if (agent.navMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
                 {
                     agent.navMeshAgent.destination = obj.transform.position;
+                    if (agent.distance <= agent.config.minDistance)
+                    {
+                        agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
+                    }
                 }
             }
-
-            timer = agent.config.maxTime;
         }
-        else if (!agent.navMeshAgent.hasPath)
+        else
         {
-            WorldBounds worldBounds = GameObject.FindObjectOfType<WorldBounds>();
-            Vector3 min = worldBounds.min.position;
-            Vector3 max = worldBounds.max.position;
-
-            Vector3 randomPosition = new Vector3(
-                Random.Range(min.x, max.x),
-                Random.Range(min.y, max.y),
-                Random.Range(min.z, max.z)
-                );
-            agent.navMeshAgent.destination = randomPosition;
+            agent.stateMachine.ChangeState(AiStateId.Wander);
         }
     }
 

@@ -15,7 +15,7 @@ public class AiStateMachine
         states = new AiState[numStates];
     }
 
-    public void RegsiterState(AiState state)
+    public void RegisterState(AiState state)
     {
         int index = (int)state.GetId();
         states[index] = state;

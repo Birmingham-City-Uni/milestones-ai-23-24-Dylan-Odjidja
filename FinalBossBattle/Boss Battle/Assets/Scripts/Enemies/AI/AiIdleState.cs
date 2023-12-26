@@ -16,20 +16,9 @@ public class AiIdleState : AiState
 
     public void Update(AiAgent agent)
     {
-        Vector3 playerDirection = agent.player.transform.position - agent.transform.position;
-        if (playerDirection.magnitude > agent.config.maxSightDistance)
+        if (agent.startTime >= 5.0f)
         {
-            return;
-        }
-
-        Vector3 agentDirection = agent.transform.forward;
-
-        playerDirection.Normalize();
-
-        float dotProduct = Vector3.Dot(playerDirection, agentDirection);
-        if (dotProduct > 0.0f)
-        {
-            agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+            agent.stateMachine.ChangeState(AiStateId.Wander);
         }
     }
 
