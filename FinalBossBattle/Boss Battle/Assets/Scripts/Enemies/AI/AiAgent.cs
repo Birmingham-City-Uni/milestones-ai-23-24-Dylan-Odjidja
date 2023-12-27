@@ -9,22 +9,21 @@ public class AiAgent : MonoBehaviour
 {
     public AiStateId initialState;
     public AiAgentConfig config;
-    public TextMeshProUGUI state;
 
     [HideInInspector] public AiStateMachine stateMachine;
     [HideInInspector] public NavMeshAgent navMeshAgent;
-    [HideInInspector] public EnemyHealthBar healthBar;
     [HideInInspector] public GameObject player;
     [HideInInspector] public AiSensor sensors;
+    [HideInInspector] public EnemyWeaponController enemyWeaponController;
     public float distance;
     [HideInInspector] public float startTime = 0.0f;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        healthBar = GetComponentInChildren<EnemyHealthBar>();
         player = GameObject.FindGameObjectWithTag("Player");
         sensors = GetComponent<AiSensor>();
+        enemyWeaponController = GetComponentInChildren<EnemyWeaponController>();
 
 
         stateMachine = new AiStateMachine(this);
@@ -38,7 +37,6 @@ public class AiAgent : MonoBehaviour
     void Update()
     {
         stateMachine.Update();
-        state.text = "Current State: " + stateMachine.currentState;
         if (startTime < 5.0f) 
         { 
             startTime += Time.deltaTime; 

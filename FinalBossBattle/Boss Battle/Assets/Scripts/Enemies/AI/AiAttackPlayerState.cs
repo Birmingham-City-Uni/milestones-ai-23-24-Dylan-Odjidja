@@ -25,8 +25,12 @@ public class AiAttackPlayerState : AiState
         {
             foreach (var obj in agent.sensors.objects)
             {
-                    agent.navMeshAgent.destination = obj.transform.position;
-                    Debug.Log("Attacking");
+                agent.navMeshAgent.destination = obj.transform.position;
+                if (agent.enemyWeaponController.CanAttack == true && !agent.enemyWeaponController.isAttacking)
+                {
+                    agent.enemyWeaponController.SwordAttack();
+                }
+                Debug.Log("Attacking");
             }
         }
         else

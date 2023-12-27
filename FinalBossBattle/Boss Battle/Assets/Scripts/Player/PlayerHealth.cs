@@ -3,30 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100;
     public float currentHealth;
-    [HideInInspector] public GameObject weaponHolder;
-    [HideInInspector] public GameObject parent;
-    [HideInInspector] public WeaponController weaponController;
-    [HideInInspector] public MeshRenderer meshRenderer;
+    [HideInInspector] EnemyWeaponController enemyWeaponController;
 
     void Start()
     {
         currentHealth = maxHealth;
-        weaponHolder = GameObject.FindGameObjectWithTag("WeaponHolder");
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
-        weaponController = weaponHolder.GetComponent<WeaponController>();
-        parent = GameObject.FindGameObjectWithTag("Parent");
+        enemyWeaponController = GetComponent<EnemyWeaponController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Sword" && weaponController.isAttacking)
+        if (other.tag == "EnemySword")
         {
-            TakeDamage(20);
-            Debug.Log("-20");
+            TakeDamage(5);
+            Debug.Log("-5");
             //Instantiate(HitParticle.transform, 
             //    new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
         }
@@ -43,6 +37,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        
     }
 }

@@ -9,8 +9,10 @@ TagManager:
   - Enemy
   - Sword
   - WeaponHolder
-  - Object
   - Text
+  - Parent
+  - Object
+  - EnemySword
   layers:
   - Default
   - TransparentFX
