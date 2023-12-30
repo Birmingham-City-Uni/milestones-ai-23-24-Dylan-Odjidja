@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AiWanderState : AiState
 {
+
     public AiStateId GetId()
     {
         return AiStateId.Wander;
@@ -11,7 +12,7 @@ public class AiWanderState : AiState
 
     public void Enter(AiAgent agent)
     {
-        
+        agent.navMeshAgent.speed = 1f;
     }
 
     public void Exit(AiAgent agent)
@@ -37,6 +38,11 @@ public class AiWanderState : AiState
         else if (agent.sensors.objects.Count > 0)
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+        }
+
+        if (agent.enemyHealth.isAlive == false)
+        {
+            agent.stateMachine.ChangeState(AiStateId.Death);
         }
     }
 }

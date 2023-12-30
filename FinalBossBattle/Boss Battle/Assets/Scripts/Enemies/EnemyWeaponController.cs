@@ -9,12 +9,10 @@ public class EnemyWeaponController : MonoBehaviour
     public float AttackCooldown = 2f;
     public Animator animator;
     public bool isAttacking = false;
-    [HideInInspector] public BoxCollider boxCollider;
 
     private void Start()
     {
-        animator = sword.GetComponent<Animator>();
-        boxCollider = sword.GetComponent<BoxCollider>();
+        animator = GetComponentInParent<Animator>();
     }
 
     void Update()
@@ -26,8 +24,8 @@ public class EnemyWeaponController : MonoBehaviour
     {
         isAttacking = true;
         CanAttack = false;
-        boxCollider.enabled = true;
         animator.SetTrigger("Attack");
+        Debug.Log("-5");
         StartCoroutine(ResetAttackCooldown());
     }
 
@@ -42,6 +40,5 @@ public class EnemyWeaponController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.45f);
         isAttacking = false;
-        boxCollider.enabled = false;
     }
 }

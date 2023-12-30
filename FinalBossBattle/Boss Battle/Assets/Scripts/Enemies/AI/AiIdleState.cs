@@ -20,6 +20,10 @@ public class AiIdleState : AiState
         {
             agent.stateMachine.ChangeState(AiStateId.Wander);
         }
+        else if (agent.enemyHealth.isAlive == false)
+        {
+            agent.stateMachine.ChangeState(AiStateId.Death);
+        }
     }
 
     public void Exit(AiAgent agent)

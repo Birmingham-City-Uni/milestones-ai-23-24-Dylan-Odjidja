@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [HideInInspector] public GameObject parent;
     [HideInInspector] public WeaponController weaponController;
     [HideInInspector] public MeshRenderer meshRenderer;
+    [HideInInspector] public bool isAlive = true;
 
     void Start()
     {
@@ -25,10 +26,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (other.tag == "Sword" && weaponController.isAttacking)
         {
-            TakeDamage(20);
-            Debug.Log("-20");
-            //Instantiate(HitParticle.transform, 
-            //    new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            TakeDamage(10);
+            Debug.Log("-10");
         }
     }
 
@@ -41,8 +40,16 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K)) 
+        {
+            TakeDamage(50);
+        }
+    }
+
     private void Die()
     {
-        Destroy(gameObject);
+        isAlive = false;
     }
 }

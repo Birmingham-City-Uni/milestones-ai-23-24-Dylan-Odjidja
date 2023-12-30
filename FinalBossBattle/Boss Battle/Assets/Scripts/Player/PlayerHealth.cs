@@ -7,11 +7,13 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100;
     public float currentHealth;
+    [HideInInspector] public bool isAlive = true;
     [HideInInspector] EnemyWeaponController enemyWeaponController;
 
     void Start()
     {
         currentHealth = maxHealth;
+        isAlive = true;
         enemyWeaponController = GetComponent<EnemyWeaponController>();
     }
 
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        
+        Destroy(gameObject);
+        isAlive = false;
     }
 }

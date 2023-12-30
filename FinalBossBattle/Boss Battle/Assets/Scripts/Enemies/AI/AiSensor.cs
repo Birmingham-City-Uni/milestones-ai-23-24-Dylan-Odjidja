@@ -7,7 +7,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class AiSensor : MonoBehaviour
 {
-    public float distance = 10;
+    public AiAgentConfig config;
+    public float distance;
     public float angle = 30;
     public float height = 1.0f;
     public Color meshColor = Color.red;
@@ -33,6 +34,7 @@ public class AiSensor : MonoBehaviour
     void Start()
     {
         scanInterval = 1.0f / scanFrequecny;
+        distance = config.maxSightDistance;
     }
 
     void Update()

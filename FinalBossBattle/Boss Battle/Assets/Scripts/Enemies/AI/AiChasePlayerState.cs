@@ -13,26 +13,26 @@ public class AiChasePlayerState : AiState
 
     public void Enter(AiAgent agent)
     {
-        
+        agent.navMeshAgent.speed = 3.5f;
     }
 
     public void Update(AiAgent agent)
     {
-        if (!agent.enabled)
-        {
-            return;
-        }
-
         if (agent.sensors.objects.Count > 0) 
         {
             foreach (var obj in agent.sensors.objects)
             {
                 if (agent.navMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
                 {
-                    agent.navMeshAgent.destination = obj.transform.position;
-                    if (agent.distance <= agent.config.minDistance)
+                    if (agent.distance < agent.config.minDistance)
                     {
+                        agent.stopEnemy();
                         agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
+                    }
+                    else
+                    {
+                        agent.navMeshAgent.isStopped = false;
+                        agent.navMeshAgent.destination = obj.transform.position;
                     }
                 }
             }
@@ -40,6 +40,11 @@ public class AiChasePlayerState : AiState
         else
         {
             agent.stateMachine.ChangeState(AiStateId.Wander);
+        }
+
+        if (agent.enemyHealth.isAlive == false)
+        {
+            agent.stateMachine.ChangeState(AiStateId.Death);
         }
     }
 

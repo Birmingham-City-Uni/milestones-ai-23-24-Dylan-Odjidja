@@ -1,12 +1,20 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/Behaviour%20Tree/Editor/BehaviourTreeEditor.uss?fileID=7433441132597879392&amp;guid=0872cb822de162d49a9dd3b597c0f9cf&amp;type=3#BehaviourTreeEditor" />
     <uie:Toolbar>
         <uie:ToolbarMenu tabindex="-1" display-tooltip-when-elided="true" text="Assets" />
     </uie:Toolbar>
     <SpiltView fixed-pane-initial-dimension="300" style="background-color: rgba(0, 0, 0, 0); opacity: 1;">
         <ui:VisualElement name="LeftPanel" style="flex-grow: 1; background-color: rgb(56, 56, 56); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
-            <ui:Label tabindex="-1" text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(95, 95, 95);" />
-            <InspectorView />
+            <SpiltView orientation="Vertical" fixed-pane-initial-dimension="270">
+                <ui:VisualElement name="iinspector-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Label tabindex="-1" text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(95, 95, 95);" />
+                    <InspectorView />
+                </ui:VisualElement>
+                <ui:VisualElement name="blackboard-container" style="flex-grow: 1; background-color: rgb(56, 56, 56);">
+                    <ui:Label tabindex="-1" text="Blackboard" display-tooltip-when-elided="true" style="background-color: rgb(95, 95, 95);" />
+                    <ui:IMGUIContainer style="background-color: rgb(56, 56, 56);" />
+                </ui:VisualElement>
+            </SpiltView>
         </ui:VisualElement>
         <ui:VisualElement name="RightPanel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
             <ui:Label tabindex="-1" text="Tree View" display-tooltip-when-elided="true" style="background-color: rgb(95, 95, 95); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />

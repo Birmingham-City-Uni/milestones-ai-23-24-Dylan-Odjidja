@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29411766, g: 0.019607844, b: 0.007843138, a: 1}
+  m_Color: {r: 0.24649799, g: 0.033641864, b: 0.33962262, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 8365634295256123764}
   - component: {fileID: 479192827436728354}
   - component: {fileID: 8793035792997348597}
+  - component: {fileID: 5115583815005176822}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Parent
@@ -601,12 +602,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e31db86d177f364683713c20232a537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 300
   currentHealth: 0
   weaponHolder: {fileID: 0}
   parent: {fileID: 0}
   weaponController: {fileID: 0}
   meshRenderer: {fileID: 0}
+--- !u!114 &5115583815005176822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772415650615752442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b463196086559746b7b641f93470078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 897a6605e643cc547a16a23bae43c60c, type: 2}
 --- !u!1 &3916144233081248871
 GameObject:
   m_ObjectHideFlags: 0

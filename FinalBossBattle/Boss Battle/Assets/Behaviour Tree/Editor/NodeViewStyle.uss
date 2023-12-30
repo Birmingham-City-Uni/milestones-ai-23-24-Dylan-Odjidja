@@ -87,6 +87,7 @@
 
 #description {
     font-size: 10px;
+    white-space: normal;
 }
 
 #divider {
