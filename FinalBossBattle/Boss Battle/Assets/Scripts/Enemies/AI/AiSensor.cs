@@ -179,18 +179,18 @@ public class AiSensor : MonoBehaviour
         scanInterval = 1.0f / scanFrequecny;
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    if (mesh)
-    //    {
-    //        Gizmos.color = meshColor;
-    //        Gizmos.DrawMesh(mesh, transform.position, transform.rotation);
-    //    }
+    private void OnDrawGizmos()
+    {
+        if (mesh)
+        {
+            Gizmos.color = meshColor;
+            Gizmos.DrawMesh(mesh, transform.position, transform.rotation);
+        }
 
-    //    Gizmos.color = Color.green;
-    //    foreach (var obj in objects)
-    //    {
-    //        Gizmos.DrawSphere(obj.transform.position, 0.75f);
-    //    }
-    //}
+        //Gizmos.color = Color.green;
+        //foreach (var obj in objects)
+        //{
+        //    Gizmos.DrawSphere(obj.transform.position, 0.75f);
+        //}
+    }
 }

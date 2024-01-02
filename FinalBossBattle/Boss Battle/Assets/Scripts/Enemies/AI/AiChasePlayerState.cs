@@ -18,7 +18,7 @@ public class AiChasePlayerState : AiState
 
     public void Update(AiAgent agent)
     {
-        if (agent.sensors.objects.Count > 0) 
+        if (agent.sensors.objects.Count > 0)
         {
             foreach (var obj in agent.sensors.objects)
             {
@@ -50,6 +50,6 @@ public class AiChasePlayerState : AiState
 
     public void Exit(AiAgent agent)
     {
-        
+
     }
 }

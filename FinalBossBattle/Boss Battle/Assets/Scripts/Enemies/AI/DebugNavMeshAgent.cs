@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class DebugNavMeshAgent : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public bool velocity;
     public bool desiredVelocity;
     public bool path;

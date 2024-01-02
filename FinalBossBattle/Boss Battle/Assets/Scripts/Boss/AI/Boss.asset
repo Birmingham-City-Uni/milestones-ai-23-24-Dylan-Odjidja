@@ -1,0 +1,299 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6836383709598650497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c35dcf3923cbd14096a87ff86609b17, type: 3}
+  m_Name: ChasePlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ad4217bfaf0d8564d8c87b14526a4903
+  position: {x: 419.00003, y: 671.83}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 'Chase the player if they are
+
+    in range'
+  child: {fileID: 0}
+  boss: {fileID: 0}
+  animator: {fileID: 0}
+  navMesh: {fileID: 0}
+  sensor: {fileID: 0}
+--- !u!114 &-6554534853649326506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6d04add245ea9449805acc0e525209, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fde3c8065f451584fbd41b60f65e5152
+  position: {x: 419, y: 412}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -5768389612647180987}
+--- !u!114 &-5880646796963928382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff5316834298ca4c953a8e362fdcd50, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 06c8a0a9914db71459e900071d2ac619
+  position: {x: -74.999954, y: 303}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 'Wait for a specific amount of
+
+    seconds'
+  child: {fileID: 0}
+  duration: 3
+--- !u!114 &-5768389612647180987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8678c12bb4d1284eab8c5e1b92a3b16, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8a6ff2402ec573744a2a9931f168c746
+  position: {x: 419.00006, y: 540}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: -6836383709598650497}
+--- !u!114 &-5351973431830033732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f84b314bb369464c848dcee79639dd3, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2b126d347cb004d4a8570e2ecf43ca72
+  position: {x: 0, y: -15}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 1376887419893662268}
+--- !u!114 &-2966200732183235720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8678c12bb4d1284eab8c5e1b92a3b16, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a97d6e0c143bf9f44a07c6425be720d9
+  position: {x: 149.99995, y: 412.3501}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 3425995338236796024}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5069502d38383934ca4942682468251a, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -5351973431830033732}
+  treeState: 0
+  nodes:
+  - {fileID: -5351973431830033732}
+  - {fileID: 4788652877067077553}
+  - {fileID: 8680133015751493104}
+  - {fileID: 1376887419893662268}
+  - {fileID: 3425995338236796024}
+  - {fileID: -5880646796963928382}
+  - {fileID: 1116220955863823199}
+  - {fileID: -2966200732183235720}
+  - {fileID: -6554534853649326506}
+  - {fileID: -5768389612647180987}
+  - {fileID: -6836383709598650497}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+--- !u!114 &1116220955863823199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6d04add245ea9449805acc0e525209, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 96876b49199a9264fa33d12574a1d43b
+  position: {x: 149.99998, y: 291}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -2966200732183235720}
+  - {fileID: -6554534853649326506}
+--- !u!114 &1376887419893662268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6d04add245ea9449805acc0e525209, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0f28e9a14fd328a4a89e079ac1e41016
+  position: {x: 0, y: 123.10002}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 8680133015751493104}
+  - {fileID: 4788652877067077553}
+  - {fileID: -5880646796963928382}
+  - {fileID: 1116220955863823199}
+--- !u!114 &3425995338236796024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4094ca7b75b94f4b8a8c5afd4b2ae92, type: 3}
+  m_Name: WanderNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ae2cbf370e9d5014c89f893e40565eca
+  position: {x: 149.99994, y: 539.75006}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 'Wander to a random position
+
+    on the map'
+  child: {fileID: 0}
+  boss: {fileID: 0}
+  animator: {fileID: 0}
+  navMesh: {fileID: 0}
+--- !u!114 &4788652877067077553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062b28ce514969242962f1d7174ead82, type: 3}
+  m_Name: WakeUpNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a46f613e94a02ac43a6fe34dfb16fd6d
+  position: {x: -225, y: 303}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: Wake up
+  child: {fileID: 0}
+  boss: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!114 &8680133015751493104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff5316834298ca4c953a8e362fdcd50, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f1622c93e8cc4a14c94846e4aba98c05
+  position: {x: -375, y: 303}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 'Wait for a specific amount of
+
+    seconds'
+  child: {fileID: 0}
+  duration: 3

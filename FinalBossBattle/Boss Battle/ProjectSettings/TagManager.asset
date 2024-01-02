@@ -13,6 +13,7 @@ TagManager:
   - Parent
   - Object
   - EnemySword
+  - Boss
   layers:
   - Default
   - TransparentFX
