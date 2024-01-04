@@ -2,20 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class Wander : ActionNode
 {
     public GameObject boss;
     public Animator animator;
     public NavMeshAgent navMesh;
+    public AiSensor sensor;
+    public AttackSensor attackSensor;
+    public Boss bossScript;
 
     protected override void OnStart()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
         animator = boss.GetComponent<Animator>();
         navMesh = boss.GetComponent<NavMeshAgent>();
+        sensor = boss.GetComponent<AiSensor>();
+        attackSensor = boss.GetComponent<AttackSensor>();
+        bossScript = boss.GetComponent<Boss>();
         navMesh.speed = 1.5f;
         animator.SetFloat("Speed", navMesh.velocity.magnitude);
+        navMesh.isStopped = false;
     }
 
     protected override void OnStop()
@@ -37,7 +45,13 @@ public class Wander : ActionNode
                 Random.Range(min.z, max.z)
                 );
             navMesh.destination = randomPosition;
+
+            return State.Success;
         }
-        return State.Success;
+        else 
+        {
+            return State.Failure; 
+        }
+        
     }
 }

@@ -20,8 +20,7 @@ public class WakeUp : ActionNode
 
     protected override State OnUpdate()
     {
-        Debug.Log("WakeUpNode");
-        animator.SetBool("IsAwake", true);
+        animator.SetBool("isAwake", true);
         return State.Success;
     }
 }

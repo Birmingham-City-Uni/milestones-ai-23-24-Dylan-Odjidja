@@ -1,57 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6836383709598650497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c35dcf3923cbd14096a87ff86609b17, type: 3}
-  m_Name: ChasePlayer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: ad4217bfaf0d8564d8c87b14526a4903
-  position: {x: 419.00003, y: 671.83}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    moveToObject: {fileID: 0}
-  agent: {fileID: 0}
-  description: 'Chase the player if they are
-
-    in range'
-  child: {fileID: 0}
-  boss: {fileID: 0}
-  animator: {fileID: 0}
-  navMesh: {fileID: 0}
-  sensor: {fileID: 0}
---- !u!114 &-6554534853649326506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6d04add245ea9449805acc0e525209, type: 3}
-  m_Name: SequencerNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: fde3c8065f451584fbd41b60f65e5152
-  position: {x: 419, y: 412}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    moveToObject: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  children:
-  - {fileID: -5768389612647180987}
---- !u!114 &-5880646796963928382
+--- !u!114 &-8884107430469780124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,18 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 06c8a0a9914db71459e900071d2ac619
-  position: {x: -74.999954, y: 303}
+  guid: b0185b002ad0410448e54d1fbc0f5b17
+  position: {x: -468, y: 304}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
   agent: {fileID: 0}
-  description: 'Wait for a specific amount of
-
-    seconds'
+  description: 
   child: {fileID: 0}
   duration: 3
---- !u!114 &-5768389612647180987
+--- !u!114 &-8395806732239856589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,19 +32,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8678c12bb4d1284eab8c5e1b92a3b16, type: 3}
-  m_Name: RepeatNode
+  m_Script: {fileID: 11500000, guid: 8ff5316834298ca4c953a8e362fdcd50, type: 3}
+  m_Name: WaitNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 8a6ff2402ec573744a2a9931f168c746
-  position: {x: 419.00006, y: 540}
+  guid: d3369d68b2cf0e34082820a46017ec34
+  position: {x: -168, y: 304}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  child: {fileID: -6836383709598650497}
+  child: {fileID: 0}
+  duration: 3
+--- !u!114 &-5667145854320774837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc619e71e59eb9c469f3ef97935e343c, type: 3}
+  m_Name: AttackPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: cd4b74a8df0bd29458aa019f52d1249d
+  position: {x: 300, y: 530}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 0}
+  boss: {fileID: 0}
+  animator: {fileID: 0}
+  navMesh: {fileID: 0}
+  sensor: {fileID: 0}
+  attackSensor: {fileID: 0}
+  bossScript: {fileID: 0}
 --- !u!114 &-5351973431830033732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,14 +89,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2b126d347cb004d4a8570e2ecf43ca72
-  position: {x: 0, y: -15}
+  position: {x: 0, y: -125}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  child: {fileID: 1376887419893662268}
---- !u!114 &-2966200732183235720
+  child: {fileID: 1039874245163661890}
+--- !u!114 &-5191012943665228390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,19 +105,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8678c12bb4d1284eab8c5e1b92a3b16, type: 3}
-  m_Name: RepeatNode
+  m_Script: {fileID: 11500000, guid: 6c35dcf3923cbd14096a87ff86609b17, type: 3}
+  m_Name: ChasePlayer
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: a97d6e0c143bf9f44a07c6425be720d9
-  position: {x: 149.99995, y: 412.3501}
+  guid: c830a3ee17af6854f81de9aef018ca43
+  position: {x: 0, y: 530}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  child: {fileID: 3425995338236796024}
+  child: {fileID: 0}
+  boss: {fileID: 0}
+  animator: {fileID: 0}
+  navMesh: {fileID: 0}
+  sensor: {fileID: 0}
+  attackSensor: {fileID: 0}
+  bossScript: {fileID: 0}
+--- !u!114 &-4159922558688142137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4094ca7b75b94f4b8a8c5afd4b2ae92, type: 3}
+  m_Name: Wander
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c1ac1f31806a92c4f91f96e7ac0e7206
+  position: {x: 150, y: 530}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 0}
+  boss: {fileID: 0}
+  animator: {fileID: 0}
+  navMesh: {fileID: 0}
+  sensor: {fileID: 0}
+  attackSensor: {fileID: 0}
+  bossScript: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,19 +169,19 @@ MonoBehaviour:
   nodes:
   - {fileID: -5351973431830033732}
   - {fileID: 4788652877067077553}
-  - {fileID: 8680133015751493104}
   - {fileID: 1376887419893662268}
-  - {fileID: 3425995338236796024}
-  - {fileID: -5880646796963928382}
-  - {fileID: 1116220955863823199}
-  - {fileID: -2966200732183235720}
-  - {fileID: -6554534853649326506}
-  - {fileID: -5768389612647180987}
-  - {fileID: -6836383709598650497}
+  - {fileID: 950336939268237761}
+  - {fileID: -5191012943665228390}
+  - {fileID: -4159922558688142137}
+  - {fileID: -5667145854320774837}
+  - {fileID: 1039874245163661890}
+  - {fileID: -8884107430469780124}
+  - {fileID: -8395806732239856589}
+  - {fileID: 8304535951076425499}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
---- !u!114 &1116220955863823199
+--- !u!114 &950336939268237761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,21 +190,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6d04add245ea9449805acc0e525209, type: 3}
-  m_Name: SequencerNode
+  m_Script: {fileID: 11500000, guid: 1c130e0e5cade094f897bb11c6f40e25, type: 3}
+  m_Name: SelectorNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 96876b49199a9264fa33d12574a1d43b
-  position: {x: 149.99998, y: 291}
+  guid: b2f259bd712a24a4b8d36be0c09f6661
+  position: {x: 129, y: 395}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: Check if the player is in range
+  children:
+  - {fileID: -5191012943665228390}
+  - {fileID: -4159922558688142137}
+  - {fileID: -5667145854320774837}
+--- !u!114 &1039874245163661890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8678c12bb4d1284eab8c5e1b92a3b16, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 43e3111667608f24d878776b7dbde0b0
+  position: {x: 0, y: 0}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  children:
-  - {fileID: -2966200732183235720}
-  - {fileID: -6554534853649326506}
+  child: {fileID: 1376887419893662268}
 --- !u!114 &1376887419893662268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,37 +250,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   description: 
   children:
-  - {fileID: 8680133015751493104}
+  - {fileID: -8884107430469780124}
   - {fileID: 4788652877067077553}
-  - {fileID: -5880646796963928382}
-  - {fileID: 1116220955863823199}
---- !u!114 &3425995338236796024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4094ca7b75b94f4b8a8c5afd4b2ae92, type: 3}
-  m_Name: WanderNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: ae2cbf370e9d5014c89f893e40565eca
-  position: {x: 149.99994, y: 539.75006}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    moveToObject: {fileID: 0}
-  agent: {fileID: 0}
-  description: 'Wander to a random position
-
-    on the map'
-  child: {fileID: 0}
-  boss: {fileID: 0}
-  animator: {fileID: 0}
-  navMesh: {fileID: 0}
+  - {fileID: -8395806732239856589}
+  - {fileID: 8304535951076425499}
 --- !u!114 &4788652877067077553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +269,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a46f613e94a02ac43a6fe34dfb16fd6d
-  position: {x: -225, y: 303}
+  position: {x: -318, y: 304}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
@@ -272,7 +278,7 @@ MonoBehaviour:
   child: {fileID: 0}
   boss: {fileID: 0}
   animator: {fileID: 0}
---- !u!114 &8680133015751493104
+--- !u!114 &8304535951076425499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,19 +287,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff5316834298ca4c953a8e362fdcd50, type: 3}
-  m_Name: WaitNode
+  m_Script: {fileID: 11500000, guid: f8678c12bb4d1284eab8c5e1b92a3b16, type: 3}
+  m_Name: RepeatNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: f1622c93e8cc4a14c94846e4aba98c05
-  position: {x: -375, y: 303}
+  guid: c56a7bfa48ef38c4ba9ce2c275280c5a
+  position: {x: 131, y: 280}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     moveToObject: {fileID: 0}
   agent: {fileID: 0}
-  description: 'Wait for a specific amount of
-
-    seconds'
-  child: {fileID: 0}
-  duration: 3
+  description: 
+  child: {fileID: 950336939268237761}

@@ -22,9 +22,10 @@ public class PlayerHealth : MonoBehaviour
         if (other.tag == "EnemySword")
         {
             TakeDamage(5);
-            Debug.Log("-5");
-            //Instantiate(HitParticle.transform, 
-            //    new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+        }
+        else if (other.tag == "Boss Head")
+        {
+            TakeDamage(10);
         }
     }
 

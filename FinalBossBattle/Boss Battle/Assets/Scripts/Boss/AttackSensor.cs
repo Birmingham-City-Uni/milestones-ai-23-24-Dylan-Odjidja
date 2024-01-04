@@ -5,13 +5,13 @@ using System.Data;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class AiSensor : MonoBehaviour
+public class AttackSensor : MonoBehaviour
 {
     public AiAgentConfig config;
     public float distance;
     public float angle = 30;
     public float height = 1.0f;
-    public Color meshColor = Color.red;
+    public Color meshColor = Color.blue;
     public int scanFrequecny = 30;
     public LayerMask layers;
     public LayerMask occlusionLayers;
@@ -34,7 +34,7 @@ public class AiSensor : MonoBehaviour
     void Start()
     {
         scanInterval = 1.0f / scanFrequecny;
-        distance = config.maxSightDistance;
+        distance = config.minDistance;
     }
 
     void Update()
@@ -161,7 +161,7 @@ public class AiSensor : MonoBehaviour
             currentAngle += deltaAngle;
         }
 
-        for(int i = 0; i < numVertices; ++i)
+        for (int i = 0; i < numVertices; ++i)
         {
             triangles[i] = i;
         }

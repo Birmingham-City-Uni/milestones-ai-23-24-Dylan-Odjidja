@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChasePlayer : ActionNode
+public class AttackPlayer : ActionNode
 {
     public GameObject boss;
     public Animator animator;
@@ -22,7 +22,6 @@ public class ChasePlayer : ActionNode
         bossScript = boss.GetComponent<Boss>();
         navMesh.speed = 3.5f;
         animator.SetFloat("Speed", navMesh.velocity.magnitude);
-        navMesh.isStopped = false;
     }
 
     protected override void OnStop()
@@ -32,22 +31,15 @@ public class ChasePlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        if (sensor.objects.Count > 0 && attackSensor.objects.Count <= 0)
+        if (attackSensor.objects.Count > 0 && sensor.objects.Count > 0)
         {
-            foreach (var obj in sensor.objects)
-            {
-                if (navMesh.pathStatus != NavMeshPathStatus.PathPartial)
-                {
-                   navMesh.destination = obj.transform.position;
-                }
-            }
-
+            navMesh.isStopped = true;
+            bossScript.Attack();
             return State.Success;
         }
         else
         {
             return State.Failure;
         }
-        
     }
 }
