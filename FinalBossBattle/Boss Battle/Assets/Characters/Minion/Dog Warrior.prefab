@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 64938642822038349}
   - component: {fileID: 9201215537341497435}
   - component: {fileID: 4858059633640645265}
+  - component: {fileID: 2410739303578647936}
   m_Layer: 0
   m_Name: SwordPolyart
   m_TagString: EnemySword
@@ -398,6 +399,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0936196, y: 0.9946236, z: 0.020377029}
   m_Center: {x: 0.0044655073, y: -0.66323775, z: -0.0037332596}
+--- !u!114 &2410739303578647936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980933910187204016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7f12daa3fbbd845ae224fbc26ef44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985235067208695787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,8 +1180,8 @@ GameObject:
   - component: {fileID: 7996469448640297638}
   - component: {fileID: 5199137422500780829}
   - component: {fileID: 211755747254394037}
-  - component: {fileID: 5246828097771603703}
   - component: {fileID: 4501622127222107609}
+  - component: {fileID: 405870359759775681}
   m_Layer: 0
   m_Name: Dog Warrior
   m_TagString: Enemy
@@ -1323,7 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
-  distance: 10
+  distance: 25
   angle: 90
   height: 5
   meshColor: {r: 1, g: 0, b: 0, a: 0.14901961}
@@ -1335,25 +1348,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   objects: []
---- !u!114 &5246828097771603703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3169831749912832539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e31db86d177f364683713c20232a537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  weaponHolder: {fileID: 0}
-  parent: {fileID: 0}
-  weaponController: {fileID: 0}
-  meshRenderer: {fileID: 0}
-  isAlive: 1
 --- !u!114 &4501622127222107609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,6 +1365,21 @@ MonoBehaviour:
   AttackCooldown: 2
   animator: {fileID: 7996469448640297638}
   isAttacking: 0
+--- !u!114 &405870359759775681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169831749912832539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b3a0cad00c3ce428baa738a2bbb320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  isAlive: 1
 --- !u!1 &3232501989216056327
 GameObject:
   m_ObjectHideFlags: 0

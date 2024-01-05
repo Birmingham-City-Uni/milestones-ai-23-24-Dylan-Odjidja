@@ -34,7 +34,7 @@ public class AttackSensor : MonoBehaviour
     void Start()
     {
         scanInterval = 1.0f / scanFrequecny;
-        distance = config.minDistance;
+        distance = config.minBossDistance;
     }
 
     void Update()

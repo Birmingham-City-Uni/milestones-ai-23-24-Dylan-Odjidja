@@ -18,7 +18,7 @@ public class Wander : ActionNode
         boss = GameObject.FindGameObjectWithTag("Boss");
         animator = boss.GetComponent<Animator>();
         navMesh = boss.GetComponent<NavMeshAgent>();
-        sensor = boss.GetComponent<AiSensor>();
+        sensor = boss.GetComponentInChildren<AiSensor>();
         attackSensor = boss.GetComponent<AttackSensor>();
         bossScript = boss.GetComponent<Boss>();
         navMesh.speed = 1.5f;

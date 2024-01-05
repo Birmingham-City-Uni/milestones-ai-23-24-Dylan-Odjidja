@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32622aa034365474ea620e5ccc998d57, type: 3}
   m_Name: ai_default_configuration
   m_EditorClassIdentifier: 
-  minDistance: 7
+  minDistance: 2
+  minBossDistance: 7
   maxSightDistance: 25

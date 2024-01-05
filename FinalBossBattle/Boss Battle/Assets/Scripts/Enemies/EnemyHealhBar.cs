@@ -7,12 +7,12 @@ public class EnemyHealthBar : MonoBehaviour
 {
     public Slider healthSlider;
     public Slider easeHealthSlider;
-    EnemyHealth enemyHealth;
+    Health enemyHealth;
     private float lerpSpeed = 0.025f;
 
     void Start()
     {
-        enemyHealth = GetComponentInParent<EnemyHealth>();
+        enemyHealth = GetComponentInParent<Health>();
         enemyHealth.currentHealth = enemyHealth.maxHealth;
     }
 

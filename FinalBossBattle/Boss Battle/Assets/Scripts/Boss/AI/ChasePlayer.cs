@@ -17,7 +17,7 @@ public class ChasePlayer : ActionNode
         boss = GameObject.FindGameObjectWithTag("Boss");
         animator = boss.GetComponent<Animator>();
         navMesh = boss.GetComponent<NavMeshAgent>();
-        sensor = boss.GetComponent<AiSensor>();
+        sensor = boss.GetComponentInChildren<AiSensor>();
         attackSensor = boss.GetComponent<AttackSensor>();
         bossScript = boss.GetComponent<Boss>();
         navMesh.speed = 3.5f;

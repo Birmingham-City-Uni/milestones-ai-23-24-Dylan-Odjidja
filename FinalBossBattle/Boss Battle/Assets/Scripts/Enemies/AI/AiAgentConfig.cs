@@ -6,5 +6,6 @@ using UnityEngine;
 public class AiAgentConfig : ScriptableObject
 {
     public float minDistance;
+    public float minBossDistance;
     public float maxSightDistance;
 }

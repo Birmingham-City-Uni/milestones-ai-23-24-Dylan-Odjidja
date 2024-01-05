@@ -17,7 +17,7 @@ public class AiAgent : MonoBehaviour
     [HideInInspector] public GameObject player;
     [HideInInspector] public AiSensor sensors;
     [HideInInspector] public EnemyWeaponController enemyWeaponController;
-    [HideInInspector] public EnemyHealth enemyHealth;
+    [HideInInspector] public Health enemyHealth;
     [HideInInspector] public TextMeshProUGUI text;
     [HideInInspector] public float startTime = 0.0f;
 
@@ -27,7 +27,7 @@ public class AiAgent : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         sensors = GetComponent<AiSensor>();
         enemyWeaponController = GetComponentInChildren<EnemyWeaponController>();
-        enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponent<Health>();
         text = GetComponentInChildren<TextMeshProUGUI>();
         animator = GetComponent<Animator>();
 

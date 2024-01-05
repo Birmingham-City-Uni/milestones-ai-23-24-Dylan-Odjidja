@@ -7,12 +7,12 @@ public class PlayerHealthBar : MonoBehaviour
 {
     public Slider healthSlider;
     public Slider easeHealthSlider;
-    PlayerHealth playerHealth;
+    Health playerHealth;
     private float lerpSpeed = 0.025f;
 
     void Start()
     {
-        playerHealth = GetComponentInParent<PlayerHealth>();
+        playerHealth = GetComponentInParent<Health>();
         playerHealth.currentHealth = playerHealth.maxHealth;
     }
 
@@ -26,11 +26,6 @@ public class PlayerHealthBar : MonoBehaviour
         if (healthSlider.value != easeHealthSlider.value)
         {
             easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, playerHealth.currentHealth, lerpSpeed);
-        }
-
-        if (Input.GetKeyDown(KeyCode.J)) 
-        {
-            playerHealth.TakeDamage(5);
         }
     }
 }

@@ -1619,6 +1619,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4417925051982882891}
   - {fileID: 3116946394806411202}
   - {fileID: 8618974472729239667}
   - {fileID: 1221904515739990577}
@@ -2245,6 +2246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339063493662126266}
   - component: {fileID: 2570470775685629998}
+  - component: {fileID: 3773064873474827092}
   m_Layer: 0
   m_Name: NightMareDragon
   m_TagString: Untagged
@@ -2390,6 +2392,31 @@ SkinnedMeshRenderer:
     m_Center: {x: -66.486176, y: -80.032745, z: -2.3920593}
     m_Extent: {x: 591.7075, y: 271.15985, z: 377.18967}
   m_DirtyAABB: 0
+--- !u!114 &3773064873474827092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759673498049998668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1372dcb7f91d894aafc280922cf964e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
+  distance: 25
+  angle: 180
+  height: 3
+  meshColor: {r: 1, g: 0, b: 0, a: 0.078431375}
+  scanFrequecny: 30
+  layers:
+    serializedVersion: 2
+    m_Bits: 64
+  occlusionLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  objects: []
 --- !u!1 &7035326495434555824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,11 +2650,11 @@ GameObject:
   - component: {fileID: 8866736226841723231}
   - component: {fileID: 4852049879496046282}
   - component: {fileID: 4705613743701394970}
-  - component: {fileID: 1564986522785738995}
   - component: {fileID: 5672456097421600284}
   - component: {fileID: 29029390013274072}
   - component: {fileID: 5247056252218768013}
   - component: {fileID: 3760747547465176032}
+  - component: {fileID: 6539797225198736126}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -2709,31 +2736,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1564986522785738995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7633255382678621829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1372dcb7f91d894aafc280922cf964e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
-  distance: 25
-  angle: 60
-  height: 3
-  meshColor: {r: 1, g: 0, b: 0, a: 0.078431375}
-  scanFrequecny: 30
-  layers:
-    serializedVersion: 2
-    m_Bits: 64
-  occlusionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  objects: []
 --- !u!64 &5672456097421600284
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2786,7 +2788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
   distance: 7
-  angle: 60
+  angle: 120
   height: 3
   meshColor: {r: 0, g: 0, b: 1, a: 0.078431375}
   scanFrequecny: 30
@@ -2809,12 +2811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bceb75adcc2124047b5437bce6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
   distance: 0
-  isAlive: 1
-  healthSlider: {fileID: 8090285480402592597}
-  easeHealthSlider: {fileID: 1477765845553024042}
   CanAttack: 1
   AttackCooldown: 2
   animator: {fileID: 0}
@@ -2823,6 +2820,21 @@ MonoBehaviour:
   weaponController: {fileID: 0}
   navMesh: {fileID: 0}
   player: {fileID: 0}
+--- !u!114 &6539797225198736126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633255382678621829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b3a0cad00c3ce428baa738a2bbb320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 300
+  currentHealth: 0
+  isAlive: 1
 --- !u!1 &7667577181373269611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2998,6 +3010,72 @@ Transform:
   m_Father: {fileID: 3873208411855341967}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8603542852405775493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4417925051982882891}
+  - component: {fileID: 3415394090068705497}
+  - component: {fileID: 7070107113838461699}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Boss Head
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4417925051982882891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603542852405775493}
+  m_LocalRotation: {x: -0.000000085587075, y: 0.00000004561697, z: -0.26351607, w: 0.9646551}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8156423200713730974}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.558}
+--- !u!65 &3415394090068705497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603542852405775493}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 29.513723, y: 95.823814, z: 91.415306}
+  m_Center: {x: -55.254242, y: -46.52137, z: 1.6910322}
+--- !u!114 &7070107113838461699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603542852405775493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467b01fab5ce63447814421b89ece508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8631555033823053322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,6 +3149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4356993609693058989}
+  - component: {fileID: 5653335997088471756}
   m_Layer: 0
   m_Name: Health Bar
   m_TagString: Untagged
@@ -3095,6 +3174,20 @@ Transform:
   m_Father: {fileID: 2184978170516553584}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5653335997088471756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858674305842675947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d292e2547f3735c46bd794c578cf5030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 8090285480402592597}
+  easeHealthSlider: {fileID: 1477765845553024042}
 --- !u!1 &8859018867026678288
 GameObject:
   m_ObjectHideFlags: 0
