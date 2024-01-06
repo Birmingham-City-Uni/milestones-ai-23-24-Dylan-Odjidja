@@ -8,18 +8,20 @@ public class AttackPlayer : ActionNode
     public GameObject boss;
     public Animator animator;
     public NavMeshAgent navMesh;
-    public AiSensor sensor;
     public AttackSensor attackSensor;
     public Boss bossScript;
+    public GameObject gm;
+    public GameManager gameManager;
 
     protected override void OnStart()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
         animator = boss.GetComponent<Animator>();
         navMesh = boss.GetComponent<NavMeshAgent>();
-        sensor = boss.GetComponentInChildren<AiSensor>();
         attackSensor = boss.GetComponent<AttackSensor>();
         bossScript = boss.GetComponent<Boss>();
+        gm = GameObject.FindGameObjectWithTag("Game Manager");
+        gameManager = gm.GetComponent<GameManager>();
         navMesh.speed = 3.5f;
         animator.SetFloat("Speed", navMesh.velocity.magnitude);
     }
@@ -31,7 +33,7 @@ public class AttackPlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        if (attackSensor.objects.Count > 0 && sensor.objects.Count > 0)
+        if (gameManager.player != null && attackSensor.objects.Count > 0)
         {
             navMesh.isStopped = true;
             bossScript.Attack();

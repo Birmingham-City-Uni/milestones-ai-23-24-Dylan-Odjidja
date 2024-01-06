@@ -13,7 +13,6 @@ public class PlayerHealthBar : MonoBehaviour
     void Start()
     {
         playerHealth = GetComponentInParent<Health>();
-        playerHealth.currentHealth = playerHealth.maxHealth;
     }
 
     void Update()

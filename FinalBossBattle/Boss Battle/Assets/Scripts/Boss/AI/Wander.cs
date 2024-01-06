@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -12,6 +13,8 @@ public class Wander : ActionNode
     public AiSensor sensor;
     public AttackSensor attackSensor;
     public Boss bossScript;
+    public GameObject gm;
+    public GameManager gameManager;
 
     protected override void OnStart()
     {
@@ -21,7 +24,8 @@ public class Wander : ActionNode
         sensor = boss.GetComponentInChildren<AiSensor>();
         attackSensor = boss.GetComponent<AttackSensor>();
         bossScript = boss.GetComponent<Boss>();
-        navMesh.speed = 1.5f;
+        gm = GameObject.FindGameObjectWithTag("Game Manager");
+        gameManager = gm.GetComponent<GameManager>();
         animator.SetFloat("Speed", navMesh.velocity.magnitude);
         navMesh.isStopped = false;
     }
@@ -33,8 +37,10 @@ public class Wander : ActionNode
 
     protected override State OnUpdate()
     {
-        if(!navMesh.hasPath)
+        if(!navMesh.hasPath && !gameManager.player)
         {
+            navMesh.speed = 3.5f;
+
             WorldBounds worldBounds = GameObject.FindObjectOfType<WorldBounds>();
             Vector3 min = worldBounds.min.position;
             Vector3 max = worldBounds.max.position;

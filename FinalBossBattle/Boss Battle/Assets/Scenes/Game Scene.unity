@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 188092923}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7070107113838461699, guid: c628ac27ef9673c4c9ade6ecd46bc01d, type: 3}
+      propertyPath: hitParticle
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
     - target: {fileID: 7633255382678621829, guid: c628ac27ef9673c4c9ade6ecd46bc01d, type: 3}
       propertyPath: m_Name
       value: Boss

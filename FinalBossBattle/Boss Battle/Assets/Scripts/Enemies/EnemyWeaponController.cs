@@ -12,7 +12,7 @@ public class EnemyWeaponController : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponentInParent<Animator>();
+        animator = sword.GetComponent<Animator>();
     }
 
     void Update()
@@ -25,7 +25,6 @@ public class EnemyWeaponController : MonoBehaviour
         isAttacking = true;
         CanAttack = false;
         animator.SetTrigger("Attack");
-        Debug.Log("-5");
         StartCoroutine(ResetAttackCooldown());
     }
 

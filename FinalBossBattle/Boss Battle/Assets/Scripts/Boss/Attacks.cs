@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Attacks : MonoBehaviour
 {
-    private Boss boss;
-
-    private void Start()
-    {
-        boss = GetComponentInParent<Boss>();
-    }
+    public GameObject hitParticle;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
             Health playerHealth = other.GetComponent<Health>();
             playerHealth.TakeDamage(20);
         }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 2
   minBossDistance: 7
-  maxSightDistance: 25
+  maxSightDistance: 5

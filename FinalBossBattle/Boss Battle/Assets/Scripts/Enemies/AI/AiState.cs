@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum AiStateId
 {
-    Idle,
+    Spawn,
     Wander,
     ChasePlayer,
     AttackPlayer,

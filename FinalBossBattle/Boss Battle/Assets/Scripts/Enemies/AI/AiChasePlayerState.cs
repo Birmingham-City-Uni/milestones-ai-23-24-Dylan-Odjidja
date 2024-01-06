@@ -18,28 +18,20 @@ public class AiChasePlayerState : AiState
 
     public void Update(AiAgent agent)
     {
-        if (agent.sensors.objects.Count > 0)
+        if (agent.gameManager.player != null)
         {
-            foreach (var obj in agent.sensors.objects)
+            if (agent.navMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
             {
-                if (agent.navMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
+                if (agent.distance < agent.config.minDistance)
                 {
-                    if (agent.distance < agent.config.minDistance)
-                    {
-                        agent.stopEnemy();
-                        agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
-                    }
-                    else
-                    {
-                        agent.navMeshAgent.isStopped = false;
-                        agent.navMeshAgent.destination = obj.transform.position;
-                    }
+                    agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
+                }
+                else
+                {
+                    agent.navMeshAgent.isStopped = false;
+                    agent.navMeshAgent.destination = agent.gameManager.player.transform.position;
                 }
             }
-        }
-        else
-        {
-            agent.stateMachine.ChangeState(AiStateId.Wander);
         }
 
         if (agent.enemyHealth.isAlive == false)

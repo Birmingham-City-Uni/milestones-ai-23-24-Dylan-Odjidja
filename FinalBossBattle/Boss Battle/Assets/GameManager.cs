@@ -20,10 +20,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("You Lose");
         }
-        if (!boss)
-        {
-            Time.timeScale = 0;
-            Debug.Log("You Win");
-        }
+        //if (!boss)
+        //{
+        //    Time.timeScale = 0;
+        //    Debug.Log("You Win");
+        //}
     }
 }

@@ -340,7 +340,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 300
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Boss
+  m_text: Dragon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 300
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2246,7 +2246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 339063493662126266}
   - component: {fileID: 2570470775685629998}
-  - component: {fileID: 3773064873474827092}
   m_Layer: 0
   m_Name: NightMareDragon
   m_TagString: Untagged
@@ -2392,31 +2391,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -66.486176, y: -80.032745, z: -2.3920593}
     m_Extent: {x: 591.7075, y: 271.15985, z: 377.18967}
   m_DirtyAABB: 0
---- !u!114 &3773064873474827092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759673498049998668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1372dcb7f91d894aafc280922cf964e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
-  distance: 25
-  angle: 180
-  height: 3
-  meshColor: {r: 1, g: 0, b: 0, a: 0.078431375}
-  scanFrequecny: 30
-  layers:
-    serializedVersion: 2
-    m_Bits: 64
-  occlusionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  objects: []
 --- !u!1 &7035326495434555824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,7 +2652,7 @@ Transform:
   - {fileID: 339063493662126266}
   - {fileID: 3873208411855341967}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8866736226841723231
 Animator:
@@ -2724,7 +2698,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1923039037
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3076,6 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467b01fab5ce63447814421b89ece508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 0}
 --- !u!1 &8631555033823053322
 GameObject:
   m_ObjectHideFlags: 0

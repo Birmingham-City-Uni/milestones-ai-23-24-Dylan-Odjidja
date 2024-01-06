@@ -10,7 +10,9 @@ public class ChasePlayer : ActionNode
     public NavMeshAgent navMesh;
     public AiSensor sensor;
     public AttackSensor attackSensor;
-    public Boss bossScript;
+    public GameObject gm;
+    public Health health;
+    public GameManager gameManager;
 
     protected override void OnStart()
     {
@@ -19,8 +21,9 @@ public class ChasePlayer : ActionNode
         navMesh = boss.GetComponent<NavMeshAgent>();
         sensor = boss.GetComponentInChildren<AiSensor>();
         attackSensor = boss.GetComponent<AttackSensor>();
-        bossScript = boss.GetComponent<Boss>();
-        navMesh.speed = 3.5f;
+        gm = GameObject.FindGameObjectWithTag("Game Manager");
+        gameManager = gm.GetComponent<GameManager>();
+        health = boss.GetComponent<Health>();
         animator.SetFloat("Speed", navMesh.velocity.magnitude);
         navMesh.isStopped = false;
     }
@@ -32,14 +35,13 @@ public class ChasePlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        if (sensor.objects.Count > 0 && attackSensor.objects.Count <= 0)
+        if (gameManager.player != null && attackSensor.objects.Count <= 0 && health.currentHealth != 150)
         {
-            foreach (var obj in sensor.objects)
+            navMesh.speed = 5;
+
+            if (navMesh.pathStatus != NavMeshPathStatus.PathPartial)
             {
-                if (navMesh.pathStatus != NavMeshPathStatus.PathPartial)
-                {
-                   navMesh.destination = obj.transform.position;
-                }
+                navMesh.destination = gameManager.player.transform.position;
             }
 
             return State.Success;

@@ -16,6 +16,8 @@ public class Boss : MonoBehaviour
     [HideInInspector] public NavMeshAgent navMesh;
     [HideInInspector] public GameObject player;
 
+    private Health health;
+
     void Start()
     {
         weaponHolder = GameObject.FindGameObjectWithTag("WeaponHolder");
@@ -23,11 +25,17 @@ public class Boss : MonoBehaviour
         navMesh = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
     }
 
     public void Update()
     {
         distance = Vector3.Distance(navMesh.transform.position, player.transform.position);
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            health.TakeDamage(50);
+        }
     }
 
     public void StopEnemy()

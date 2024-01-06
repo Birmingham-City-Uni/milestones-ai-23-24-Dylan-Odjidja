@@ -23,6 +23,7 @@ public class AiDeathState : AiState
     public void Update(AiAgent agent)
     {
         agent.navMeshAgent.isStopped = true;
-        agent.animator.SetBool("IsAlive", false);
+        agent.enemyHealth.Die();
+        //agent.animator.SetBool("IsAlive", false);
     }
 }

@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef960c30766d5742ab0ed20c95b6ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitParticle: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
 --- !u!1 &1279838242328625000
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +387,7 @@ GameObject:
   - component: {fileID: 1938816120482872}
   - component: {fileID: 3655351109288748123}
   - component: {fileID: 5990640263631067574}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +407,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1741129159509938628}
-  m_Father: {fileID: 782129050311718186}
+  m_Father: {fileID: 3026808149333880348}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -432,7 +433,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -511,10 +512,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8751492446019597810}
   - {fileID: 2685737399575821066}
   - {fileID: 5243890116971034864}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4582228290755832847
 MeshFilter:
@@ -655,7 +657,7 @@ MonoBehaviour:
   sprintFOV: 80
   sprintFOVStepTime: 10
   useSprintBar: 1
-  hideBarWhenFull: 0
+  hideBarWhenFull: 1
   sprintBarBG: {fileID: 7561848494555168164}
   sprintBar: {fileID: 3483528387948385118}
   sprintBarWidthPercent: 0.3
@@ -663,7 +665,7 @@ MonoBehaviour:
   enableJump: 1
   jumpKey: 32
   jumpPower: 5
-  enableCrouch: 1
+  enableCrouch: 0
   holdToCrouch: 1
   crouchKey: 306
   crouchHeight: 0.75
@@ -697,7 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741129159509938628}
   - component: {fileID: 4898399653387928821}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +748,7 @@ GameObject:
   - component: {fileID: 611528529589642720}
   - component: {fileID: 7213309056210382235}
   - component: {fileID: 4643506629183137123}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5282544911510784344}
   - component: {fileID: 1929062661226231938}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Ease Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1009,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8751492446019597810}
   - {fileID: 8478468865758461822}
   m_Father: {fileID: 2685737399575821066}
   m_RootOrder: 0
@@ -1082,7 +1083,7 @@ GameObject:
   - component: {fileID: 715914816648403405}
   - component: {fileID: 4131935097824587717}
   - component: {fileID: 8001582296695251625}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,7 +1159,7 @@ GameObject:
   - component: {fileID: 179360075632606643}
   - component: {fileID: 4069434635391004181}
   - component: {fileID: 5135316242483394002}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317811487948444579}
   - component: {fileID: 6207593700115780996}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

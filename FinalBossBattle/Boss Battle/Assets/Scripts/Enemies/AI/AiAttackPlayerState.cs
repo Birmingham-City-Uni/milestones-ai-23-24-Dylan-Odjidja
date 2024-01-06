@@ -11,7 +11,7 @@ public class AiAttackPlayerState : AiState
 
     public void Enter(AiAgent agent)
     {
-        
+        agent.stopEnemy();
     }
 
     public void Exit(AiAgent agent)
@@ -28,13 +28,9 @@ public class AiAttackPlayerState : AiState
                 agent.enemyWeaponController.SwordAttack();
             }
         }
-        else if (agent.distance > agent.config.minDistance && agent.sensors.objects.Count > 0)
+        else if (agent.distance > agent.config.minDistance)
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
-        }
-        else
-        {
-            agent.stateMachine.ChangeState(AiStateId.Wander);
         }
 
         if (agent.enemyHealth.isAlive == false)

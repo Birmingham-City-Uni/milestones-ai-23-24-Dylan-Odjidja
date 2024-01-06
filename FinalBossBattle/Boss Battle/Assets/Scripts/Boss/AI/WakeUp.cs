@@ -20,6 +20,7 @@ public class WakeUp : ActionNode
 
     protected override State OnUpdate()
     {
+        animator.SetTrigger("Scream");
         animator.SetBool("isAwake", true);
         return State.Success;
     }
