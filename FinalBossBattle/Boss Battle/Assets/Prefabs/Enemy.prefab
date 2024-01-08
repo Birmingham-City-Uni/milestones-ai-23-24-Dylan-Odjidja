@@ -272,7 +272,7 @@ Transform:
   m_Children:
   - {fileID: 4894753718662418034}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8618617409011838889
 Rigidbody:
@@ -362,6 +362,7 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: f543b8de923fcac4e9570602f0092772, type: 2}
   distance: 0
   spawnPartricles: {fileID: 198000010585806678, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+  healthItem: {fileID: 8145709161437482998, guid: 214bae827a161b144b24ef42cbc37071, type: 3}
   navMeshAgent: {fileID: 8949583337881345882}
   player: {fileID: 0}
   sensors: {fileID: 0}
@@ -373,6 +374,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   capsule: {fileID: 0}
   capsuleCollider: {fileID: 0}
+  boss: {fileID: 0}
+  bossScript: {fileID: 0}
 --- !u!114 &7524068476241466250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b3a0cad00c3ce428baa738a2bbb320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 30
   currentHealth: 0
   isAlive: 1
 --- !u!1 &2969041054289269121
@@ -912,7 +915,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 30
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1002,7 +1005,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 30
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

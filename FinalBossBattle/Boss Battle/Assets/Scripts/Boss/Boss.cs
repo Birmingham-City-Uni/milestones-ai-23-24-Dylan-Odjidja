@@ -11,6 +11,8 @@ public class Boss : MonoBehaviour
     public float AttackCooldown = 1f;
     public Animator animator;
     public bool isAttacking = false;
+    public int Stage = 1;
+    public static List<GameObject> minions;
     [HideInInspector] public GameObject weaponHolder;
     [HideInInspector] public WeaponController weaponController;
     [HideInInspector] public NavMeshAgent navMesh;
@@ -63,5 +65,10 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         isAttacking = false;
+    }
+
+    public void SpawnMinions()
+    {
+        
     }
 }

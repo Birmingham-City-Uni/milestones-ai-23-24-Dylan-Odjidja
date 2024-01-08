@@ -1,28 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Stage2AttackPlayer : ActionNode
+public class ProceedToStage2 : ActionNode
 {
     public GameObject boss;
+    public Boss bossScript;
+    public Health health;
     public Animator animator;
     public NavMeshAgent navMesh;
-    public AttackSensor attackSensor;
-    public Boss bossScript;
+    public TextMeshProUGUI title;
     public GameObject gm;
     public GameManager gameManager;
 
     protected override void OnStart()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
+        bossScript = boss.GetComponent<Boss>();
+        health = boss.GetComponent<Health>();
         animator = boss.GetComponent<Animator>();
         navMesh = boss.GetComponent<NavMeshAgent>();
-        attackSensor = boss.GetComponent<AttackSensor>();
-        bossScript = boss.GetComponent<Boss>();
+        title = boss.GetComponentInChildren<TextMeshProUGUI>();
         gm = GameObject.FindGameObjectWithTag("Game Manager");
         gameManager = gm.GetComponent<GameManager>();
-        animator.SetFloat("Speed", navMesh.velocity.magnitude);
     }
 
     protected override void OnStop()
@@ -32,15 +34,23 @@ public class Stage2AttackPlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        if (gameManager.player != null && attackSensor.objects.Count > 0)
+        if (health.currentHealth == 150 && bossScript.Stage == 1)
         {
             navMesh.isStopped = true;
-            bossScript.Attack();
+            animator.SetTrigger("Scream");
+            //title.text = "Defeat the Minions!";
+            //animator.SetBool("isAwake", false);
+            bossScript.Stage = 2;
+            //if (gameManager.minionsDead == true)
+            //{
+                
+            //}
             return State.Success;
         }
         else
         {
             return State.Failure;
         }
+        
     }
 }

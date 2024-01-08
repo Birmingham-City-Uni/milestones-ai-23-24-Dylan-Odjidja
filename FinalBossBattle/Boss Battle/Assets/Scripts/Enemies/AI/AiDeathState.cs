@@ -12,7 +12,8 @@ public class AiDeathState : AiState
 
     public void Enter(AiAgent agent)
     {
-        
+        agent.SpawnHealthItem();
+        agent.gameManager.minions -= 1;
     }
 
     public void Exit(AiAgent agent)
@@ -23,7 +24,6 @@ public class AiDeathState : AiState
     public void Update(AiAgent agent)
     {
         agent.navMeshAgent.isStopped = true;
-        agent.enemyHealth.Die();
         //agent.animator.SetBool("IsAlive", false);
     }
 }

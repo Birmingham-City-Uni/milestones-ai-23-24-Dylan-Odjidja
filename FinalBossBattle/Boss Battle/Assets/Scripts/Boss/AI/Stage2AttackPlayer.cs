@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Stage2AttackPlayer : ActionNode
+public class AttackPlayer : ActionNode
 {
     public GameObject boss;
     public Animator animator;
@@ -32,7 +32,7 @@ public class Stage2AttackPlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        if (gameManager.player != null && attackSensor.objects.Count > 0)
+        if (gameManager.player != null && attackSensor.objects.Count > 0 && bossScript.Stage == 2)
         {
             navMesh.isStopped = true;
             bossScript.Attack();

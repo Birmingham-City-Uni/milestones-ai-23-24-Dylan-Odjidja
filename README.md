@@ -2,4 +2,4 @@
 
 Boss Battle
 
-Trello Link: https://trello.com/invite/b/ypFguKcC/ATTI15ff7e9b29e333675f2773b338b181fa6B739B6D/boss-battle
+Dylan Odjidja S21119698

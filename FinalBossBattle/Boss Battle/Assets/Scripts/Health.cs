@@ -18,15 +18,21 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        if (currentHealth <= 0.0f)
+        if (currentHealth == 0f)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    public void Die()
+    public void Heal(float amount)
     {
-        Destroy(gameObject);
+        currentHealth += amount;
+    }
+
+    private IEnumerator Die()
+    {
         isAlive = false;
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }

@@ -23,7 +23,8 @@ public class BehaviourTree : ScriptableObject
         return treeState;
     }
 
-    public Node CreateNode(System.Type type) {
+    public Node CreateNode(System.Type type)
+    {
         Node node = ScriptableObject.CreateInstance(type) as Node;
         node.name = type.Name;
         node.guid = GUID.Generate().ToString();
@@ -42,7 +43,8 @@ public class BehaviourTree : ScriptableObject
         return node;
     }
 
-    public void DeleteNode(Node node) {
+    public void DeleteNode(Node node)
+    {
         Undo.RecordObject(this, "Behaviour Tree (DeleteNode)");
         nodes.Remove(node);
         //AssetDatabase.RemoveObjectFromAsset(node);
@@ -129,7 +131,7 @@ public class BehaviourTree : ScriptableObject
         return children;
     }
 
-    public void Traverse( Node node, System.Action<Node> visitor)
+    public void Traverse(Node node, System.Action<Node> visitor)
     {
         if (node)
         {

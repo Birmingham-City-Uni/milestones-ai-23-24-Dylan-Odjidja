@@ -24,7 +24,7 @@ public class Sword : MonoBehaviour
         else if (other.tag == "Boss" && weaponController.isAttacking)
         {
             Instantiate(hitParticle, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
-            Health bossHealth = other.GetComponent<Health>();
+            Health bossHealth = other.GetComponentInParent<Health>();
             bossHealth.TakeDamage(10);
         }
     }

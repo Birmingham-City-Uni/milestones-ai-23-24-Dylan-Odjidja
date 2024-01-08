@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEditor.UI;
 using TMPro;
 
 public class AiAgent : MonoBehaviour
@@ -10,9 +9,12 @@ public class AiAgent : MonoBehaviour
     public AiStateId initialState;
     public AiAgentConfig config;
     public float distance;
+    private Transform enemy;
 
     [SerializeField] private ParticleSystem spawnPartricles;
     private ParticleSystem spawnParticlesInstance;
+
+    [SerializeField] private GameObject healthItem;
 
     [HideInInspector] public AiStateMachine stateMachine;
     [HideInInspector] public NavMeshAgent navMeshAgent;
@@ -27,6 +29,8 @@ public class AiAgent : MonoBehaviour
     [HideInInspector] public GameManager gameManager;
     [HideInInspector] public GameObject capsule;
     [HideInInspector] public CapsuleCollider capsuleCollider;
+    [HideInInspector] public GameObject boss;
+    [HideInInspector] public Boss bossScript;
 
     void Start()
     {
@@ -41,12 +45,16 @@ public class AiAgent : MonoBehaviour
         gameManager = gm.GetComponent<GameManager>();
         capsule = GameObject.FindGameObjectWithTag("Capsule");
         capsuleCollider = GetComponent<CapsuleCollider>();
+        boss = GameObject.FindGameObjectWithTag("Boss");
+        bossScript = boss.GetComponent<Boss>();
+        enemy = GetComponent<Transform>();
 
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiChasePlayerState());
         stateMachine.RegisterState(new AiSpawnState());
         stateMachine.RegisterState(new AiWanderState());
         stateMachine.RegisterState(new AiAttackPlayerState());
+        stateMachine.RegisterState(new AiDeathState());
         stateMachine.ChangeState(initialState);
     }
 
@@ -70,5 +78,10 @@ public class AiAgent : MonoBehaviour
     public void SpawnParticles()
     {
         spawnParticlesInstance = Instantiate(spawnPartricles, transform.position, Quaternion.identity);
+    }
+
+    public void SpawnHealthItem()
+    {
+        Instantiate(healthItem, new Vector3(enemy.position.x, 2, enemy.position.z), Quaternion.identity);
     }
 }

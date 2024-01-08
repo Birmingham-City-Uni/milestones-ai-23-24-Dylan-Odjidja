@@ -17,6 +17,8 @@ TagManager:
   - Boss Head
   - Game Manager
   - Capsule
+  - HealthItem
+  - Win
   layers:
   - Default
   - TransparentFX
